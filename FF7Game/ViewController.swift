@@ -21,6 +21,9 @@ class ViewController: UIViewController {
     
     //create button outlets
     @IBOutlet weak var CrossSlashButtonOutlet: UIButton!
+    @IBOutlet weak var BraverButtonOutlet: UIButton!
+    @IBOutlet weak var OmnislashButtonOutlet: UIButton!
+    @IBOutlet weak var CureButtonOutlet: UIButton!
     
     
     //Cloud attributes
@@ -67,7 +70,10 @@ class ViewController: UIViewController {
     }
     
     func disableButtons() {
-        
+        CrossSlashButtonOutlet.isHidden = true
+        OmnislashButtonOutlet.isHidden = true
+        BraverButtonOutlet.isHidden = true
+        CureButtonOutlet.isHidden = true
     }
     
     //Sephiroth AI function
@@ -93,9 +99,11 @@ class ViewController: UIViewController {
         
         if cloudHealth <= 0 {
             TurnDescription.text = "You died."
+            disableButtons()
             
         } else if sephHealth <= 0 {
             TurnDescription.text = "You win."
+            disableButtons()
         }
         
     }

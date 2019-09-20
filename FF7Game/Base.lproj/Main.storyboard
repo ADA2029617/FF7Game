@@ -167,9 +167,13 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="BraverButtonOutlet" destination="bif-jS-IUY" id="d6d-8x-VUz"/>
                         <outlet property="CloudHPChange" destination="Eyh-FP-PJN" id="CKd-vR-2iC"/>
                         <outlet property="CloudHPLabel" destination="ZL3-mA-4me" id="dqc-xR-SD3"/>
                         <outlet property="CloudTurnLabel" destination="jJV-rk-GEg" id="WHW-Z7-xi0"/>
+                        <outlet property="CrossSlashButtonOutlet" destination="VN0-Sl-Fjz" id="nOF-f9-f6h"/>
+                        <outlet property="CureButtonOutlet" destination="ima-S2-byx" id="WtT-9J-Ypb"/>
+                        <outlet property="OmnislashButtonOutlet" destination="pPP-xF-uUG" id="tgW-ah-IoK"/>
                         <outlet property="SephHPChange" destination="9Qs-Kf-HMT" id="N5F-i0-bky"/>
                         <outlet property="SephHPLabel" destination="HGl-eE-RJh" id="Iuf-r5-3zz"/>
                         <outlet property="SephTurnLabel" destination="cw8-tV-LZK" id="vef-Ke-0CS"/>
