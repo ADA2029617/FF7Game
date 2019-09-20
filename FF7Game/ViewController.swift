@@ -9,6 +9,8 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    //OUTLETS
 
     //creating label outlets
     @IBOutlet weak var SephHPChange: UILabel!
@@ -25,6 +27,8 @@ class ViewController: UIViewController {
     @IBOutlet weak var OmnislashButtonOutlet: UIButton!
     @IBOutlet weak var CureButtonOutlet: UIButton!
     @IBOutlet weak var RestartButtonOutlet: UIButton!
+    
+    //------------PROGRAM VALUES--------------
     
     
     //Cloud attributes
@@ -44,12 +48,8 @@ class ViewController: UIViewController {
     let sephScintilla = 25
     var isSephDead = false
     
-    //keeps track of whose turn it is, cloud starts first
-    var isPlayersTurn = true
     
-    //determines whether main loop should run
-    var inBattle = true
-    
+    //-----------MAIN VIEW FUNCTION----------
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,12 +70,45 @@ class ViewController: UIViewController {
         SephHPLabel.text = String(sephHealth) + "/" + String(sephMaxhealth)
     }
     
+    //--------------MY FUNCTIONS-------------
+    
+    //disables all of cloud's buttons
     func disableButtons() {
         CrossSlashButtonOutlet.isHidden = true
         OmnislashButtonOutlet.isHidden = true
         BraverButtonOutlet.isHidden = true
         CureButtonOutlet.isHidden = true
     }
+    
+    //resets all values to their defaults for another battle
+    func SetGame() {
+        
+        //show all buttons that were hidden by battle ending
+        CrossSlashButtonOutlet.isHidden = false
+        OmnislashButtonOutlet.isHidden = false
+        BraverButtonOutlet.isHidden = false
+        CureButtonOutlet.isHidden = false
+        
+        //set hp values to original
+        sephHealth = sephMaxhealth
+        cloudHealth = cloudMaxHealth
+        
+        //hide hp change labels
+        CloudHPChange.isHidden = true
+        SephHPChange.isHidden = true
+        
+        //hide turn description label
+        TurnDescription.isHidden = true
+        
+        //reset hpNumber label values
+        SephHPLabel.text = String(sephMaxhealth) + "/" + String(sephMaxhealth)
+        CloudHPLabel.text = String(cloudMaxHealth) + "/" + String(cloudMaxHealth)
+        
+        //hide restart button
+        RestartButtonOutlet.isHidden = true
+        
+    }
+    
     
     //Sephiroth AI function
     func haveSephMakeTurn() {
@@ -112,6 +145,8 @@ class ViewController: UIViewController {
         }
         
     }
+    
+    //------------ACTIONS----------------
     
     /*Subtracts crossSlash from sephhealth
      displays -crossSlash on SephHPChange label
@@ -181,29 +216,7 @@ class ViewController: UIViewController {
         haveSephMakeTurn()
     }
     
-    func SetGame() {
-        
-        //show all buttons that were hidden by battle ending
-        CrossSlashButtonOutlet.isHidden = false
-        OmnislashButtonOutlet.isHidden = false
-        BraverButtonOutlet.isHidden = false
-        CureButtonOutlet.isHidden = false
-        
-        //set hp values to original
-        sephHealth = sephMaxhealth
-        cloudHealth = cloudMaxHealth
-        
-        //hide hp change labels
-        CloudHPChange.isHidden = true
-        SephHPChange.isHidden = true
-        
-        //hide turn description label
-        TurnDescription.isHidden = true
-        
-        //
-        
-    }
-    
+    //runs the setgame function to restart the battle values
     @IBAction func RestartButton(_ sender: Any) {
         SetGame()
     }
