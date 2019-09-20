@@ -162,6 +162,17 @@
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8RD-qA-MLL">
+                                <rect key="frame" x="51" y="786" width="50" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="0.027066068719999999" green="0.0053983870890000002" blue="0.63141089679999995" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <state key="normal" title="Restart">
+                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="RestartButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="HY2-ko-MV5"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.2570992112159729" green="0.49010205268859863" blue="0.49019914865493774" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -174,6 +185,7 @@
                         <outlet property="CrossSlashButtonOutlet" destination="VN0-Sl-Fjz" id="nOF-f9-f6h"/>
                         <outlet property="CureButtonOutlet" destination="ima-S2-byx" id="WtT-9J-Ypb"/>
                         <outlet property="OmnislashButtonOutlet" destination="pPP-xF-uUG" id="tgW-ah-IoK"/>
+                        <outlet property="RestartButtonOutlet" destination="8RD-qA-MLL" id="0lD-if-bSI"/>
                         <outlet property="SephHPChange" destination="9Qs-Kf-HMT" id="N5F-i0-bky"/>
                         <outlet property="SephHPLabel" destination="HGl-eE-RJh" id="Iuf-r5-3zz"/>
                         <outlet property="SephTurnLabel" destination="cw8-tV-LZK" id="vef-Ke-0CS"/>

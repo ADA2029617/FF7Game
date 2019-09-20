@@ -24,6 +24,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var BraverButtonOutlet: UIButton!
     @IBOutlet weak var OmnislashButtonOutlet: UIButton!
     @IBOutlet weak var CureButtonOutlet: UIButton!
+    @IBOutlet weak var RestartButtonOutlet: UIButton!
     
     
     //Cloud attributes
@@ -99,11 +100,15 @@ class ViewController: UIViewController {
         
         if cloudHealth <= 0 {
             TurnDescription.text = "You died."
+            CloudHPLabel.text = "0/ " + String(cloudMaxHealth)
             disableButtons()
+            RestartButtonOutlet.isHidden = false
             
         } else if sephHealth <= 0 {
             TurnDescription.text = "You win."
+            SephHPLabel.text = "0/ " + String(sephMaxhealth)
             disableButtons()
+            RestartButtonOutlet.isHidden = false
         }
         
     }
@@ -175,6 +180,34 @@ class ViewController: UIViewController {
         TurnDescription.isHidden = false
         haveSephMakeTurn()
     }
+    
+    func SetGame() {
+        
+        //show all buttons that were hidden by battle ending
+        CrossSlashButtonOutlet.isHidden = false
+        OmnislashButtonOutlet.isHidden = false
+        BraverButtonOutlet.isHidden = false
+        CureButtonOutlet.isHidden = false
+        
+        //set hp values to original
+        sephHealth = sephMaxhealth
+        cloudHealth = cloudMaxHealth
+        
+        //hide hp change labels
+        CloudHPChange.isHidden = true
+        SephHPChange.isHidden = true
+        
+        //hide turn description label
+        TurnDescription.isHidden = true
+        
+        //
+        
+    }
+    
+    @IBAction func RestartButton(_ sender: Any) {
+        SetGame()
+    }
+    
     
 }
 
