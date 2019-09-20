@@ -19,6 +19,10 @@ class ViewController: UIViewController {
     @IBOutlet weak var SephHPLabel: UILabel!
     @IBOutlet weak var CloudHPLabel: UILabel!
     
+    //create button outlets
+    @IBOutlet weak var CrossSlashButtonOutlet: UIButton!
+    
+    
     //Cloud attributes
     let cloudMaxHealth = 100
     var cloudHealth = 100
@@ -62,10 +66,13 @@ class ViewController: UIViewController {
         SephHPLabel.text = String(sephHealth) + "/" + String(sephMaxhealth)
     }
     
+    func disableButtons() {
+        
+    }
     
     //Sephiroth AI function
     func haveSephMakeTurn() {
-        var sephRandomInt = Int.random(in: 1..<4)
+        let sephRandomInt = Int.random(in: 1..<4)
         
         if sephRandomInt == 1 {
             cloudHealth -= sephTremblingEarth
@@ -84,7 +91,13 @@ class ViewController: UIViewController {
             TurnDescription.text = "Sephiroth used Scintilla"
         }
         
-        isPlayersTurn = true
+        if cloudHealth <= 0 {
+            TurnDescription.text = "You died."
+            
+        } else if sephHealth <= 0 {
+            TurnDescription.text = "You win."
+        }
+        
     }
     
     /*Subtracts crossSlash from sephhealth
@@ -99,7 +112,7 @@ class ViewController: UIViewController {
         TurnDescription.text = "Cloud used Cross Slash"
         SephHPChange.isHidden = false
         TurnDescription.isHidden = false
-        isPlayersTurn = false
+        haveSephMakeTurn()
     }
     
     /*Subtracts cloudOmnislash from sephhealth
@@ -114,7 +127,7 @@ class ViewController: UIViewController {
         TurnDescription.text = "Cloud used Omnislash"
         SephHPChange.isHidden = false
         TurnDescription.isHidden = false
-        isPlayersTurn = false
+        haveSephMakeTurn()
     }
     
     /*Subtracts braver from sephhealth
@@ -129,7 +142,7 @@ class ViewController: UIViewController {
         TurnDescription.text = "Cloud used Braver"
         SephHPChange.isHidden = false
         TurnDescription.isHidden = false
-        isPlayersTurn = false
+        haveSephMakeTurn()
     }
     
     /*Adds cloudCure to cloudHealth
@@ -152,11 +165,8 @@ class ViewController: UIViewController {
         TurnDescription.text = "Cloud used Cure"
         CloudHPChange.isHidden = false
         TurnDescription.isHidden = false
-        isPlayersTurn = false
+        haveSephMakeTurn()
     }
-    
-    //main game loop
-    //while inBattle == true {}
     
 }
 
