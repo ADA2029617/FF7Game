@@ -139,7 +139,6 @@
                                 </state>
                                 <connections>
                                     <action selector="BraverButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hoz-9u-INL"/>
-                                    <action selector="OmnislashButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4Wv-VY-ebs"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sephiroth's Turn" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cw8-tV-LZK">
