@@ -28,7 +28,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var CureButtonOutlet: UIButton!
     @IBOutlet weak var RestartButtonOutlet: UIButton!
     
-    //------------PROGRAM VALUES--------------
+    //------------PROGRAM VALUES--------------//
     
     
     //Cloud attributes
@@ -49,7 +49,7 @@ class ViewController: UIViewController {
     var isSephDead = false
     
     
-    //-----------MAIN VIEW FUNCTION----------
+    //-----------MAIN VIEW FUNCTION-----------//
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -70,7 +70,7 @@ class ViewController: UIViewController {
         SephHPLabel.text = String(sephHealth) + "/" + String(sephMaxhealth)
     }
     
-    //--------------MY FUNCTIONS-------------
+    //--------------MY FUNCTIONS-------------//
     
     //disables all of cloud's buttons
     func disableButtons() {
@@ -146,7 +146,7 @@ class ViewController: UIViewController {
         
     }
     
-    //------------ACTIONS----------------
+    //------------ACTIONS------------------//
     
     /*Subtracts crossSlash from sephhealth
      displays -crossSlash on SephHPChange label
