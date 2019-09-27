@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     //Cloud attributes
     let cloudMaxHealth = 100
     var cloudHealth = 100
-    let cloudCure = 25
+    let cloudCure = 50
     let crossSlash = 10
     let braver = 15
     let omniSlash = 25
@@ -130,6 +130,7 @@ class ViewController: UIViewController {
             CloudHPLabel.text = String(cloudHealth) + "/" + String(cloudMaxHealth)
             TurnDescription.text = "Sephiroth used Scintilla"
         }
+        CloudHPChange.isHidden = false
         
         if cloudHealth <= 0 {
             TurnDescription.text = "You died."
@@ -202,10 +203,10 @@ class ViewController: UIViewController {
     @IBAction func Curebutton(_ sender: Any) {
         
         //if cloudHealth would go over 100, then heal to max HP
-        if cloudHealth <= 75 {
-            cloudHealth += cloudCure
-        } else if cloudHealth > 75 {
-            cloudHealth = 100
+        
+        cloudHealth += cloudCure
+        if cloudHealth > 100 {
+            cloudHealth = cloudMaxHealth
         }
         
         CloudHPChange.text = "+" + String(cloudCure) + " HP"
